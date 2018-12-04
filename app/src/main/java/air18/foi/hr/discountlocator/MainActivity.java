@@ -25,10 +25,6 @@ import air18.foi.hr.database.MainDatabase;
 import air18.foi.hr.discountlocator.fragments.DiscountListFragment;
 import air18.foi.hr.discountlocator.helper.Util;
 
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
-
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener, NavigationView.OnNavigationItemSelectedListener, FragmentManager.OnBackStackChangedListener {
 
     private Util util = new Util();
@@ -56,9 +52,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
         initializeNavigationManager();
         startMainModule();
-
-        AppCenter.start(getApplication(), "20e4eb0c-d6fc-4da8-8252-216a75792609",
-                Analytics.class, Crashes.class);
     }
 
     private void setCurrentActivity() {
