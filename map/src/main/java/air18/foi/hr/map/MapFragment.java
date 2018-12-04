@@ -27,6 +27,10 @@ import java.util.List;
 import air18.foi.hr.database.entities.Discount;
 import air18.foi.hr.database.entities.Store;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 public class MapFragment extends Fragment implements NavigationItem, OnMapReadyCallback {
     private List<Store> stores;
     private List<Discount> discounts;
@@ -48,6 +52,8 @@ public class MapFragment extends Fragment implements NavigationItem, OnMapReadyC
         super.onViewCreated(view, savedInstanceState);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
+
+        Analytics.trackEvent("Main Activity");
 
         mapFragment.getMapAsync(this);
     }
