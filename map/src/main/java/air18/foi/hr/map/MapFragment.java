@@ -53,7 +53,7 @@ public class MapFragment extends Fragment implements NavigationItem, OnMapReadyC
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
 
-        Analytics.trackEvent("Main Activity");
+        Analytics.trackEvent("Map Activity");
 
         mapFragment.getMapAsync(this);
     }
